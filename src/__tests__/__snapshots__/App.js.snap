@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders launches 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <div
+          class="page-head"
+        >
+          <h2
+            class="page-head-title text-center"
+          >
+            Space X Launches
+          </h2>
+        </div>
+        <ul
+          class="timeline timeline-variant"
+          data-testid="launches"
+        >
+          <span>
+            <li
+              class="timeline-month"
+            >
+              2018
+            </li>
+            <li
+              class="timeline-item timeline-item-detailed right"
+            >
+              <div
+                class="timeline-content timeline-type file"
+              >
+                <div
+                  class="timeline-icon"
+                >
+                  <i
+                    class="icon mdi mdi-bomb"
+                  />
+                </div>
+                <div
+                  class="timeline-header"
+                >
+                  <span
+                    class="timeline-autor"
+                  >
+                    #
+                    54
+                    : 
+                    SES-16 / GovSat-1
+                  </span>
+                   
+                  <p
+                    class="timeline-activity"
+                  >
+                    Falcon 9
+                     — 
+                    CCAFS SLC 40
+                  </p>
+                  <span
+                    class="timeline-time"
+                    data-testid="launch-date"
+                  >
+                    2018-01-31
+                  </span>
+                </div>
+                <div
+                  class="timeline-summary"
+                >
+                  <p>
+                    Reused booster from the classified NROL-76 mission in May 2017. Following a successful experimental ocean landing that used three engines, the booster unexpectedly remained intact; Elon Musk stated in a tweet that SpaceX will attempt to tow the booster to shore.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li
+              class="timeline-item timeline-item-detailed right"
+            >
+              <div
+                class="timeline-content timeline-type file"
+              >
+                <div
+                  class="timeline-icon"
+                >
+                  <i
+                    class="icon mdi mdi-rocket"
+                  />
+                </div>
+                <div
+                  class="timeline-header"
+                >
+                  <span
+                    class="timeline-autor"
+                  >
+                    #
+                    57
+                    : 
+                    Hispasat 30W-6
+                  </span>
+                   
+                  <p
+                    class="timeline-activity"
+                  >
+                    Falcon 9
+                     — 
+                    CCAFS SLC 40
+                  </p>
+                  <span
+                    class="timeline-time"
+                    data-testid="launch-date"
+                  >
+                    2018-03-06
+                  </span>
+                </div>
+                <div
+                  class="timeline-summary"
+                >
+                  <p>
+                    Launched with landing legs and titanium grid fins. Did not attempt a landing due to 'unfavorable weather conditions in the recovery area'.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </span>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <div
+        class="page-head"
+      >
+        <h2
+          class="page-head-title text-center"
+        >
+          Space X Launches
+        </h2>
+      </div>
+      <ul
+        class="timeline timeline-variant"
+        data-testid="launches"
+      >
+        <span>
+          <li
+            class="timeline-month"
+          >
+            2018
+          </li>
+          <li
+            class="timeline-item timeline-item-detailed right"
+          >
+            <div
+              class="timeline-content timeline-type file"
+            >
+              <div
+                class="timeline-icon"
+              >
+                <i
+                  class="icon mdi mdi-bomb"
+                />
+              </div>
+              <div
+                class="timeline-header"
+              >
+                <span
+                  class="timeline-autor"
+                >
+                  #
+                  54
+                  : 
+                  SES-16 / GovSat-1
+                </span>
+                 
+                <p
+                  class="timeline-activity"
+                >
+                  Falcon 9
+                   — 
+                  CCAFS SLC 40
+                </p>
+                <span
+                  class="timeline-time"
+                  data-testid="launch-date"
+                >
+                  2018-01-31
+                </span>
+              </div>
+              <div
+                class="timeline-summary"
+              >
+                <p>
+                  Reused booster from the classified NROL-76 mission in May 2017. Following a successful experimental ocean landing that used three engines, the booster unexpectedly remained intact; Elon Musk stated in a tweet that SpaceX will attempt to tow the booster to shore.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li
+            class="timeline-item timeline-item-detailed right"
+          >
+            <div
+              class="timeline-content timeline-type file"
+            >
+              <div
+                class="timeline-icon"
+              >
+                <i
+                  class="icon mdi mdi-rocket"
+                />
+              </div>
+              <div
+                class="timeline-header"
+              >
+                <span
+                  class="timeline-autor"
+                >
+                  #
+                  57
+                  : 
+                  Hispasat 30W-6
+                </span>
+                 
+                <p
+                  class="timeline-activity"
+                >
+                  Falcon 9
+                   — 
+                  CCAFS SLC 40
+                </p>
+                <span
+                  class="timeline-time"
+                  data-testid="launch-date"
+                >
+                  2018-03-06
+                </span>
+              </div>
+              <div
+                class="timeline-summary"
+              >
+                <p>
+                  Launched with landing legs and titanium grid fins. Did not attempt a landing due to 'unfavorable weather conditions in the recovery area'.
+                </p>
+              </div>
+            </div>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

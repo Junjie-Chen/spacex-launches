@@ -1,3 +1,11 @@
 .timeline-header {
   padding-left: 0;
 }
+
+.file .timeline-icon.failure {
+  background-color: #ea4335;
+}
+
+.file .timeline-icon.success {
+  background-color: #4285f4;
+}

@@ -27,12 +27,14 @@ Object {
             </li>
             <li
               class="timeline-item timeline-item-detailed right"
+              data-testid="launch"
             >
               <div
                 class="timeline-content timeline-type file"
               >
                 <div
-                  class="timeline-icon"
+                  class="timeline-icon failure"
+                  data-testid="launch-icon"
                 >
                   <i
                     class="icon mdi mdi-bomb"
@@ -75,13 +77,15 @@ Object {
               </div>
             </li>
             <li
-              class="timeline-item timeline-item-detailed right"
+              class="timeline-item timeline-item-detailed left"
+              data-testid="launch"
             >
               <div
                 class="timeline-content timeline-type file"
               >
                 <div
-                  class="timeline-icon"
+                  class="timeline-icon success"
+                  data-testid="launch-icon"
                 >
                   <i
                     class="icon mdi mdi-rocket"
@@ -151,12 +155,14 @@ Object {
           </li>
           <li
             class="timeline-item timeline-item-detailed right"
+            data-testid="launch"
           >
             <div
               class="timeline-content timeline-type file"
             >
               <div
-                class="timeline-icon"
+                class="timeline-icon failure"
+                data-testid="launch-icon"
               >
                 <i
                   class="icon mdi mdi-bomb"
@@ -199,13 +205,15 @@ Object {
             </div>
           </li>
           <li
-            class="timeline-item timeline-item-detailed right"
+            class="timeline-item timeline-item-detailed left"
+            data-testid="launch"
           >
             <div
               class="timeline-content timeline-type file"
             >
               <div
-                class="timeline-icon"
+                class="timeline-icon success"
+                data-testid="launch-icon"
               >
                 <i
                   class="icon mdi mdi-rocket"

@@ -69,6 +69,8 @@ function Launches({ launches }) {
     return list;
   }, {});
 
+  let times = 0;
+
   return (
     <ul data-testid="launches" className="timeline timeline-variant">
       {Object.keys(launchesByYear).map(launchYear => {
@@ -88,7 +90,7 @@ function Launches({ launches }) {
           <span key={launchYear}>
             <li className="timeline-month">{launchYear}</li>
             {sortedLaunchesByDate.map(launch => (
-              <Launch key={launch.id} launch={launch} />
+              <Launch key={launch.id} launch={launch} times={++times} />
             ))}
           </span>
         );
@@ -97,7 +99,9 @@ function Launches({ launches }) {
   );
 }
 
-function Launch({ launch }) {
+function Launch({ launch, times }) {
+  const launchAlignment = times % 2 !== 0 ? 'right' : 'left';
+  const launchStatus = launch.launch_success ? 'success' : 'failure';
   const launchIcon = launch.launch_success ? (
     <i className="icon mdi mdi-rocket" />
   ) : (
@@ -105,9 +109,9 @@ function Launch({ launch }) {
   );
 
   return (
-    <li className="timeline-item timeline-item-detailed right">
+    <li data-testid="launch" className={`timeline-item timeline-item-detailed ${launchAlignment}`}>
       <div className="timeline-content timeline-type file">
-        <div className="timeline-icon">{launchIcon}</div>
+        <div data-testid="launch-icon" className={`timeline-icon ${launchStatus}`}>{launchIcon}</div>
 
         <div className="timeline-header">
           <span data-testid="launch-mission" className="timeline-autor">

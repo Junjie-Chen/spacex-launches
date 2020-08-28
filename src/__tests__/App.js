@@ -75,3 +75,23 @@ test('renders launches with ID', () => {
     expect(launchMission.textContent.split(':')[0].replace(/#/, '')).toBe(launchIDs[index]);
   });
 });
+
+test('renders launches in alternate timeline', () => {
+  const renderedLaunches = component.getAllByTestId('launch');
+  const launchAlignments = ['right', 'left'];
+
+  expect(renderedLaunches).toHaveLength(2);
+  renderedLaunches.forEach((launch, index) => {
+    expect(launch.classList.contains(launchAlignments[index])).toBe(true);
+  });
+});
+
+test('renders launch icons in corresponding color', () => {
+  const renderedLaunchIcons = component.getAllByTestId('launch-icon');
+  const launchStatuses = ['failure', 'success'];
+
+  expect(renderedLaunchIcons).toHaveLength(2);
+  renderedLaunchIcons.forEach((launchIcon, index) => {
+    expect(launchIcon.classList.contains(launchStatuses[index])).toBe(true);
+  });
+});

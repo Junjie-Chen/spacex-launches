@@ -7,7 +7,7 @@
 import { mockData } from './mockData';
 
 export * from './mockData';
-export { sortCollection, handleError, cloneDeep } from './utilities';
+export { sortCollection, parseUrl, handleError, cloneDeep } from './utilities';
 
 /**
  * Mock the Fetch API.

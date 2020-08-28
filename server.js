@@ -24,6 +24,9 @@ router.get('/launches', async (ctx, next) => {
         rocket_name
       }
       details
+      links {
+        video_link
+      }
     }
   }`;
 

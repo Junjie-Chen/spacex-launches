@@ -12,7 +12,8 @@ export const mockData = {
       launch_site: { site_name: "CCAFS SLC 40" },
       launch_success: true,
       mission_name: "Hispasat 30W-6",
-      rocket: { rocket_name: "Falcon 9" }
+      rocket: { rocket_name: "Falcon 9" },
+      links: { video_link: 'https://youtu.be/Kpfrp-GMKKM' }
     },
     {
       details: "Reused booster from the classified NROL-76 mission in May 2017. Following a successful experimental ocean landing that used three engines, the booster unexpectedly remained intact; Elon Musk stated in a tweet that SpaceX will attempt to tow the booster to shore.",
@@ -21,7 +22,8 @@ export const mockData = {
       launch_site: { site_name: "CCAFS SLC 40" },
       launch_success: false,
       mission_name: "SES-16 / GovSat-1",
-      rocket: { rocket_name: "Falcon 9" }
+      rocket: { rocket_name: "Falcon 9" },
+      links: { video_link: 'https://youtu.be/ScYUA51-POQ' }
     }
   ]
 };

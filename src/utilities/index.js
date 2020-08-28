@@ -4,5 +4,6 @@
  */
 
 export { sortCollection } from './sortCollection';
+export { parseUrl } from './parseUrl';
 export { handleError } from './handleError';
 export { cloneDeep } from './cloneDeep';

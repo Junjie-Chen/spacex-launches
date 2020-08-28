@@ -1,5 +1,5 @@
 import React from 'react';
-import { mockData, sortCollection, cloneDeep } from '../setupTests';
+import { mockData, sortCollection, parseUrl, cloneDeep } from '../setupTests';
 import App from '../App';
 import { render, cleanup, waitForElement } from 'react-testing-library';
 // TODO: resolve act warning https://github.com/kentcdodds/react-testing-library/issues/281
@@ -93,5 +93,41 @@ test('renders launch icons in corresponding color', () => {
   expect(renderedLaunchIcons).toHaveLength(2);
   renderedLaunchIcons.forEach((launchIcon, index) => {
     expect(launchIcon.classList.contains(launchStatuses[index])).toBe(true);
+  });
+});
+
+test('renders launch videos', () => {
+  const renderedLaunchVideos = component.getAllByTestId('launch-video');
+  const launchesDeepClone = cloneDeep(mockData.launches);
+  const sortedLaunchesDeepClone = sortCollection(
+    launchesDeepClone,
+    (item) => {
+      if (!item.launch_date_utc) {
+        throw new ReferenceError('The date cannot be found! Please check the corresponding property for the date.');
+      }
+
+      return [+new Date(item.launch_date_utc), item];
+    },
+    (a, b) => a - b
+  );
+  const launchVideoLinks = sortedLaunchesDeepClone.map(launch => {
+    return parseUrl(
+      launch.links.video_link,
+      'https://www.youtube.com/embed/',
+      (url, base) => {
+        const id = url.match(/(?<=v=|e\/)(?:(?!&).)*/)[0];
+
+        if (!id) {
+          throw new TypeError('The url does not have an id! Please provide an id.');
+        }
+
+        return `${base}${id}`;
+      }
+    );
+  });
+
+  expect(renderedLaunchVideos).toHaveLength(2);
+  renderedLaunchVideos.forEach((launchVideo, index) => {
+    expect(launchVideo.src).toBe(launchVideoLinks[index]);
   });
 });

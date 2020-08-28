@@ -75,6 +75,19 @@ Object {
                   </p>
                 </div>
               </div>
+              <div
+                class="embed-responsive embed-responsive-16by9"
+              >
+                <iframe
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen=""
+                  class="embed-responsive-item"
+                  data-testid="launch-video"
+                  frameborder="0"
+                  src="https://www.youtube.com/embed/ScYUA51-POQ"
+                  title="SES-16 / GovSat-1"
+                />
+              </div>
             </li>
             <li
               class="timeline-item timeline-item-detailed left"
@@ -125,6 +138,19 @@ Object {
                     Launched with landing legs and titanium grid fins. Did not attempt a landing due to 'unfavorable weather conditions in the recovery area'.
                   </p>
                 </div>
+              </div>
+              <div
+                class="embed-responsive embed-responsive-16by9"
+              >
+                <iframe
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen=""
+                  class="embed-responsive-item"
+                  data-testid="launch-video"
+                  frameborder="0"
+                  src="https://www.youtube.com/embed/Kpfrp-GMKKM"
+                  title="Hispasat 30W-6"
+                />
               </div>
             </li>
           </span>
@@ -203,6 +229,19 @@ Object {
                 </p>
               </div>
             </div>
+            <div
+              class="embed-responsive embed-responsive-16by9"
+            >
+              <iframe
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen=""
+                class="embed-responsive-item"
+                data-testid="launch-video"
+                frameborder="0"
+                src="https://www.youtube.com/embed/ScYUA51-POQ"
+                title="SES-16 / GovSat-1"
+              />
+            </div>
           </li>
           <li
             class="timeline-item timeline-item-detailed left"
@@ -253,6 +292,19 @@ Object {
                   Launched with landing legs and titanium grid fins. Did not attempt a landing due to 'unfavorable weather conditions in the recovery area'.
                 </p>
               </div>
+            </div>
+            <div
+              class="embed-responsive embed-responsive-16by9"
+            >
+              <iframe
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen=""
+                class="embed-responsive-item"
+                data-testid="launch-video"
+                frameborder="0"
+                src="https://www.youtube.com/embed/Kpfrp-GMKKM"
+                title="Hispasat 30W-6"
+              />
             </div>
           </li>
         </span>

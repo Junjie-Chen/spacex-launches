@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { useEffect, useState } from 'react';
-import { sortCollection, handleError } from './utilities';
+import { sortCollection, parseUrl, handleError } from './utilities';
 
 function fetchLaunches() {
   const [state, setState] = useState({ loading: true });
@@ -34,6 +34,22 @@ function getSortedLaunchesByDate(dataCollection, func, sortingFunc) {
   }
 
   return sortedLaunchesByDate;
+}
+
+function getLaunchVideoLink(url, base, parsingFunc) {
+  let launchVideoLink = '';
+
+  const hasError = handleError(() => {
+    return parseUrl(url, base, parsingFunc);
+  });
+
+  // TODO: returns the error message if any
+
+  if (hasError.result) {
+    launchVideoLink = hasError.result;
+  }
+
+  return launchVideoLink;
 }
 
 function Header() {
@@ -107,6 +123,22 @@ function Launch({ launch, times }) {
   ) : (
     <i className="icon mdi mdi-bomb" />
   );
+  const launchVideoLink = getLaunchVideoLink(
+    launch.links.video_link,
+    'https://www.youtube.com/embed/',
+    (url, base) => {
+      /* Find YouTube video id using regular expression,
+         e.g., ScYUA51-POQ out of https://youtu.be/ScYUA51-POQ.
+         Learn more at https://www.regular-expressions.info/lookaround.html */
+      const id = url.match(/(?<=v=|e\/)(?:(?!&).)*/)[0];
+
+      if (!id) {
+        throw new TypeError('The url does not have an id! Please provide an id.');
+      }
+
+      return `${base}${id}`;
+    }
+  );
 
   return (
     <li data-testid="launch" className={`timeline-item timeline-item-detailed ${launchAlignment}`}>
@@ -125,6 +157,17 @@ function Launch({ launch, times }) {
         <div className="timeline-summary">
           <p>{launch.details}</p>
         </div>
+      </div>
+      <div className="embed-responsive embed-responsive-16by9">
+        <iframe
+          data-testid="launch-video"
+          className="embed-responsive-item"
+          src={launchVideoLink}
+          title={launch.mission_name}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen>
+        </iframe>
       </div>
     </li>
   );

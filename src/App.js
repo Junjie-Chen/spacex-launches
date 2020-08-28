@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { useEffect, useState } from 'react';
+import { sortCollection, handleError } from './utilities';
 
 function fetchLaunches() {
   const [state, setState] = useState({ loading: true });
@@ -17,6 +18,22 @@ function fetchLaunches() {
   }, []);
 
   return state;
+}
+
+function getSortedLaunchesByDate(dataCollection, func, sortingFunc) {
+  let sortedLaunchesByDate = [];
+
+  const hasError = handleError(() => {
+    return sortCollection(dataCollection, func, sortingFunc);
+  });
+
+  // TODO: returns the error message if any
+
+  if (hasError.result) {
+    sortedLaunchesByDate = hasError.result;
+  }
+
+  return sortedLaunchesByDate;
 }
 
 function Header() {
@@ -45,7 +62,7 @@ function Loading() {
 }
 
 function Launches({ launches }) {
-  const launchesByDate = launches.reduce((list, launch) => {
+  const launchesByYear = launches.reduce((list, launch) => {
     const date = launch.launch_date_utc.slice(0, 4);
     list[date] = list[date] || [];
     list[date].push(launch);
@@ -54,14 +71,28 @@ function Launches({ launches }) {
 
   return (
     <ul data-testid="launches" className="timeline timeline-variant">
-      {Object.keys(launchesByDate).map(launchDate => (
-        <span key={launchDate}>
-          <li className="timeline-month">{launchDate}</li>
-          {launchesByDate[launchDate].map(launch => (
-            <Launch key={launch.flight_number} launch={launch} />
-          ))}
-        </span>
-      ))}
+      {Object.keys(launchesByYear).map(launchYear => {
+        const sortedLaunchesByDate = getSortedLaunchesByDate(
+          launchesByYear[launchYear],
+          item => {
+            if (!item.launch_date_utc) {
+              throw new ReferenceError('The date cannot be found! Please check the corresponding property for the date.');
+            }
+
+            return [+new Date(item.launch_date_utc), item];
+          },
+          (a, b) => a - b
+        );
+
+        return (
+          <span key={launchYear}>
+            <li className="timeline-month">{launchYear}</li>
+            {sortedLaunchesByDate.map(launch => (
+              <Launch key={launch.flight_number} launch={launch} />
+            ))}
+          </span>
+        );
+      })}
     </ul>
   );
 }
@@ -85,7 +116,7 @@ function Launch({ launch }) {
           <p className="timeline-activity">
             {launch.rocket.rocket_name} &mdash; {launch.launch_site.site_name}
           </p>
-          <span className="timeline-time">{launch.launch_date_utc.slice(0, 10)}</span>
+          <span data-testid="launch-date" className="timeline-time">{launch.launch_date_utc.slice(0, 10)}</span>
         </div>
         <div className="timeline-summary">
           <p>{launch.details}</p>

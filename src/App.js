@@ -88,7 +88,7 @@ function Launches({ launches }) {
           <span key={launchYear}>
             <li className="timeline-month">{launchYear}</li>
             {sortedLaunchesByDate.map(launch => (
-              <Launch key={launch.flight_number} launch={launch} />
+              <Launch key={launch.id} launch={launch} />
             ))}
           </span>
         );
@@ -110,7 +110,7 @@ function Launch({ launch }) {
         <div className="timeline-icon">{launchIcon}</div>
 
         <div className="timeline-header">
-          <span className="timeline-autor">
+          <span data-testid="launch-mission" className="timeline-autor">
             #{launch.id}: {launch.mission_name}
           </span>{' '}
           <p className="timeline-activity">

@@ -51,3 +51,27 @@ test('renders launches in chronological order', () => {
     expect(launchDate.textContent).toBe(launchDates[index]);
   });
 });
+
+test('renders launches with ID', () => {
+  const renderedLaunchMissions = component.getAllByTestId('launch-mission');
+  const launchesDeepClone = cloneDeep(mockData.launches);
+  const sortedLaunchesDeepClone = sortCollection(
+    launchesDeepClone,
+    (item) => {
+      if (!item.launch_date_utc) {
+        throw new ReferenceError('The date cannot be found! Please check the corresponding property for the date.');
+      }
+
+      return [+new Date(item.launch_date_utc), item];
+    },
+    (a, b) => a - b
+  );
+  const launchIDs = sortedLaunchesDeepClone.map(launch => {
+    return launch.id;
+  });
+
+  expect(renderedLaunchMissions).toHaveLength(2);
+  renderedLaunchMissions.forEach((launchMission, index) => {
+    expect(launchMission.textContent.split(':')[0].replace(/#/, '')).toBe(launchIDs[index]);
+  });
+});
